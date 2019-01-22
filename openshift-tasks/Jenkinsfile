@@ -1,6 +1,6 @@
 #!groovy
 podTemplate(
-  label: "skopeo-pod",
+  label: "maven-appdev",
   cloud: "openshift",
   inheritFrom: "maven",
   containers: [
@@ -14,7 +14,7 @@ podTemplate(
     )
   ]
 ) {
-  node('skopeo-pod') {
+  node('maven-appdev') {
     // Define Maven Command to point to the correct
     // settings for our Nexus installation
     def mvnCmd = "mvn -s ../nexus_settings.xml"
